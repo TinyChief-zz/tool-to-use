@@ -168,7 +168,7 @@ export default {
   justify-content: center;
   min-height: 600px;
   padding-bottom: 30px;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 .text {
@@ -182,6 +182,9 @@ export default {
   @include for-tablet() {
     font-size: 46px;
   }
+  @include for-phone {
+    font-size: 36px;
+  }
   span {
     color: coral;
   }
@@ -193,22 +196,22 @@ export default {
   font-style: italic;
   // text-align: center;
   position: absolute;
+  @include for-phone {
+    font-size: 16px;
+  }
 }
 
 .tools {
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
-  @media (max-width: 768px) {
-    // max-width: 450px;
-  }
   @include for-tablet {
     justify-content: space-evenly;
     margin-bottom: 40px;
     width: 100%;
     max-width: 450px;
     justify-self: center;
-    margin-top: 50px;
+    margin-top: 30px;
   }
 }
 
@@ -225,14 +228,23 @@ export default {
   @include for-phone {
     width: 115px;
   }
+  @include for-small-phone() {
+    width: 90px;
+    height: 90px;
+  }
   cursor: pointer;
   img {
     flex-basis: 1;
     width: 60px;
-    // height: 60px;
+    @include for-small-phone {
+      width: 50px;
+    }
   }
   p {
     font-size: 14px;
+    @include for-small-phone {
+      font-size: 12px;
+    }
   }
 }
 
@@ -307,6 +319,9 @@ export default {
     color: #070707;
     border-radius: 7px;
     transition: background-color 0.2s ease-out;
+    @include for-small-phone {
+      font-size: 14px;
+    }
     &:hover {
       color: #fafafa;
       background-color: coral;

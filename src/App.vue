@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-    <div class="container">
-      <Header></Header>
-      <router-view/>
-    </div>
+    <Header></Header>
+    <router-view/>
   </div>
 </template>
 
@@ -61,6 +59,9 @@ ul {
   }
   @include for-phone() {
     max-width: $smPhoneWidth;
+  }
+  @include for-small-phone() {
+    max-width: $smPhoneWidth - 50px;
   }
 }
 
