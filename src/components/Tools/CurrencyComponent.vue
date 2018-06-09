@@ -1,6 +1,6 @@
 <template>
   <div class="currency-container">
-    <h1 class="tools-item__title">
+    <h1 class="tools-item__title currency-title">
       Курс валют
     </h1>
     <h2 class="currency-item"><span class="icon">$</span>{{results.usd}} руб.</h2>
@@ -35,8 +35,11 @@ export default {
 };
 </script>
 
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "@/style/_vars.scss";
+
 .currency-container {
   display: flex;
   flex-wrap: wrap;
@@ -51,5 +54,10 @@ export default {
   font-weight: bold;
   font-size: 30px;
   margin-right: 15px;
+}
+.currency-title {
+  @include for-tablet {
+    font-size: 26px;
+  }
 }
 </style>

@@ -38,7 +38,7 @@ header {
   justify-content: space-between;
   align-items: center;
   @include for-tablet() {
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
   }
 }
 ul {

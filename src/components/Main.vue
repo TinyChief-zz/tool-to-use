@@ -165,8 +165,10 @@ export default {
 .index-wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
   min-height: 600px;
   padding-bottom: 30px;
+  padding-top: 30px;
 }
 
 .text {
@@ -190,6 +192,7 @@ export default {
   font-weight: thin;
   font-style: italic;
   // text-align: center;
+  position: absolute;
 }
 
 .tools {
@@ -197,11 +200,15 @@ export default {
   justify-content: flex-end;
   flex-wrap: wrap;
   @media (max-width: 768px) {
-    max-width: 450px;
+    // max-width: 450px;
   }
   @include for-tablet {
     justify-content: space-evenly;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 450px;
+    justify-self: center;
+    margin-top: 50px;
   }
 }
 
@@ -215,6 +222,9 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  @include for-phone {
+    width: 115px;
+  }
   cursor: pointer;
   img {
     flex-basis: 1;
@@ -249,7 +259,10 @@ export default {
   @include for-tablet {
     width: 100%;
     min-height: 150px;
-    justify-content: space-evenly;
+    justify-content: space-between;
+  }
+  @include for-phone {
+    border: 6px solid rgba(219, 219, 219, 0.507);    
   }
   span {
     justify-self: center;
@@ -279,7 +292,12 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   @include for-tablet {
-    flex: 1;
+    flex: 0.5;
+    justify-self: center;
+    margin: 0 auto;
+  }
+  @include for-phone {
+    flex: 0.8;
   }
   a {
     padding: 8px 10px;

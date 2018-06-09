@@ -52,6 +52,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "@/style/_vars.scss";
+
 .weather-component {
   // height: 600px;
   align-self: stretch;
@@ -61,19 +63,31 @@ export default {
   margin-bottom: 100px;
   font-size: 60px;
   font-weight: bold;
+  @include for-phone {
+    margin-bottom: 30px;
+  }
 }
 .weather-def {
   text-transform: uppercase;
+  @include for-phone {
+    margin-bottom: 60px;
+  }
 }
 .city {
   text-transform: uppercase;
 }
 p:first-of-type {
   margin-top: 120px;
+  @include for-phone {
+    margin-top: 50px;
+  }
 }
 .part-title {
   text-align: left;
   margin-left: 30px;
   margin-top: 15px;
+  @include for-tablet {
+    margin-left: 15px;
+  }
 }
 </style>

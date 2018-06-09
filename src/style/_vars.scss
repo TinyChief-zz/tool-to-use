@@ -3,8 +3,10 @@ $mainColor: #fafafa;
 $desktopWidth: 1170px;
 $smDesktopWidth: 960px;
 $tabletWidth: 768px;
-$phoneWidth: 480px;
-$smPhoneWidth: 320px;
+// $phoneWidth: 480px;
+$phoneWidth: 540px;
+$smPhoneWidth: 380px;
+// $smPhoneWidth: 320px;
 // MIXINS
 @mixin for-small-phone {
   @media screen and (max-width: $smPhoneWidth) {

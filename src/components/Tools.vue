@@ -65,19 +65,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+@import "@/style/_vars.scss";
+
+$toolsNumber: 6;
+
 body {
   position: relative;
 }
 .tools {
   font-size: 14px;
+  padding-bottom: 30px;
 }
 .grid-container {
-  // display: flex;
   display: grid;
   grid-template-columns: 40% auto minmax(auto, 40%);
   grid-template-rows: max-content auto auto;
   align-content: start;
-  // grid-gap: 10px;
 }
 .tools-item-0 {
   grid-column-start: span 1;
@@ -88,11 +91,16 @@ body {
 }
 .tools-item-2 {
   grid-column-start: span 2;
-
-  // grid-column-end: 3;
 }
 .tools-item-3 {
   grid-column-start: span 2;
+}
+@for $i from 0 through $toolsNumber - 1 {
+  @include for-phone {
+    .tools-item-#{$i} { 
+      grid-column-start: span 3;
+    }
+  }
 }
 
 .item {
@@ -111,6 +119,7 @@ body {
   }
 }
 .tools-item__title {
+  text-align: right;
   position: absolute;
   top: 0;
   right: 0;
@@ -119,6 +128,9 @@ body {
   font-weight: bold;
   color: white;
   z-index: 0;
+  @include for-tablet {
+    font-size: 30px;
+  }
 }
 .open-calculator {
   width: 80px;

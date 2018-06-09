@@ -56,15 +56,28 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "@/style/_vars.scss";
+
 ul {
-  list-style: circle;
+  // list-style: circle;
   padding-left: 20px;
+  @include for-tablet {
+    padding-left: 10px;
+  }
 }
 li {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   width: 100%;  
+  position: relative;
+  &::before {
+    content: 	"•";
+    position: absolute;
+    left: -15px;
+    font-size: 20px;
+    line-height: 1;
+  }
 }
 h4 {
   font-size: 18px;
